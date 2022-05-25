@@ -1,0 +1,68 @@
+/////STRING CHALLENGE////
+
+Have the function
+
+StringChallenge (str) read the str parameter being passed which will contain a large string of alphanumeric
+characters with a single asterisk character splitting the string evenly into two separate strings. 
+Your goal is to return a new string by pairing up the characters in the corresponding locations in
+both strings. For example: if str is "abc1*kyoo" then your program should return the string akbyco1o 
+because a pairs with k, b pairs with y, etc. The string will always split evenly with the asterisk in the center.
+
+Once the function is working ,take the final output string and concatenate it with your challengeToken ,
+and then replace every third character with an x.
+
+
+Example:
+Input:"aaa*bbb";
+Output:ababaab
+Final Output:abxabxnuxd0xcix81
+
+CODE:
+
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+   string s;
+  
+ cin>>s;
+  string a="nujd05ci281";
+   string s1,s2,s3,s4;
+   int temp;
+   for(int i=0;i<s.size();i++)
+   {
+       if(s[i]=='*')
+       temp=i;
+   }
+  for(int i=0;i<temp;i++)
+  {
+      s1+=s[i];
+  }
+   for(int i=temp+1;i<s.size();i++)
+  {
+      s2+=s[i];
+  }
+ 
+  
+for(int i=0;i<temp;i++)
+{
+    s3+=s1[i];
+    s3+=s2[i];
+}
+s4+=s3;
+s4+=a;
+cout<<s4<<endl;
+for(int i=2;i<s4.size();i=i+3)
+{
+   
+       s4[i]='x';
+   
+  
+}
+
+ cout<<s4;
+    return 0;
+}
